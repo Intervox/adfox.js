@@ -1,0 +1,11 @@
+{
+  "name": "adfox.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/Intervox/adfox.js",
+  "authors": [
+    "Lendar <xeldim@gmail.com>"
+  ],
+  "description": "JavaScript library for AdFox",
+  "main": "adfox.js",
+  "license": "-"
+}
