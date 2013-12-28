@@ -1,18 +1,18 @@
-function AdFox_SetLayerVis(spritename,state){
+window.AdFox_SetLayerVis = function(spritename,state){
    document.getElementById(spritename).style.visibility=state;
 }
 
-function AdFox_Open(AF_id){
+window.AdFox_Open = function(AF_id){
    AdFox_SetLayerVis('AdFox_DivBaseFlash_'+AF_id, "hidden");
    AdFox_SetLayerVis('AdFox_DivOverFlash_'+AF_id, "visible");
 }
 
-function AdFox_Close(AF_id){
+window.AdFox_Close = function(AF_id){
    AdFox_SetLayerVis('AdFox_DivOverFlash_'+AF_id, "hidden");
    AdFox_SetLayerVis('AdFox_DivBaseFlash_'+AF_id, "visible");
 }
 
-function AdFox_getCodeScript(AF_n,AF_id,AF_src){
+window.AdFox_getCodeScript = function(AF_n,AF_id,AF_src){
    var AF_doc;
    if(AF_n<10){
       try{
@@ -30,7 +30,7 @@ function AdFox_getCodeScript(AF_n,AF_id,AF_src){
           }
 }
 
-function adfoxSdvigContent(banID, flashWidth, flashHeight){
+window.adfoxSdvigContent = function(banID, flashWidth, flashHeight){
     var obj = document.getElementById('adfoxBanner'+banID).style;
     if (flashWidth == '100%') obj.width = flashWidth;
         else obj.width = flashWidth + "px";
@@ -38,7 +38,7 @@ function adfoxSdvigContent(banID, flashWidth, flashHeight){
         else obj.height = flashHeight + "px";
 }
 
-function adfoxVisibilityFlash(banName, flashWidth, flashHeight){
+window.adfoxVisibilityFlash = function(banName, flashWidth, flashHeight){
         var obj = document.getElementById(banName).style;
     if (flashWidth == '100%') obj.width = flashWidth;
         else obj.width = flashWidth + "px";
@@ -46,7 +46,7 @@ function adfoxVisibilityFlash(banName, flashWidth, flashHeight){
         else obj.height = flashHeight + "px";
 }
 
-function adfoxStart(banID, FirShowFlNum, constVisFlashFir, sdvigContent, flash1Width, flash1Height, flash2Width, flash2Height){
+window.adfoxStart = function(banID, FirShowFlNum, constVisFlashFir, sdvigContent, flash1Width, flash1Height, flash2Width, flash2Height){
     if (FirShowFlNum == 1) adfoxVisibilityFlash('adfoxFlash1'+banID, flash1Width, flash1Height);
         else if (FirShowFlNum == 2) {
             adfoxVisibilityFlash('adfoxFlash2'+banID, flash2Width, flash2Height);
@@ -56,7 +56,7 @@ function adfoxStart(banID, FirShowFlNum, constVisFlashFir, sdvigContent, flash1W
     }
 }
 
-function adfoxOpen(banID, constVisFlashFir, sdvigContent, flash2Width, flash2Height){
+window.adfoxOpen = function(banID, constVisFlashFir, sdvigContent, flash2Width, flash2Height){
     var aEventOpenClose = new Image();
     var obj = document.getElementById("aEventOpen"+banID);
     if (obj) aEventOpenClose.src =  obj.title+'&rand='+Math.random()*1000000+'&prb='+Math.random()*1000000;
@@ -66,7 +66,7 @@ function adfoxOpen(banID, constVisFlashFir, sdvigContent, flash2Width, flash2Hei
 }
 
 
-function adfoxClose(banID, constVisFlashFir, sdvigContent, flash1Width, flash1Height){
+window.adfoxClose = function(banID, constVisFlashFir, sdvigContent, flash1Width, flash1Height){
     var aEventOpenClose = new Image();
     var obj = document.getElementById("aEventClose"+banID);
     if (obj) aEventOpenClose.src =  obj.title+'&rand='+Math.random()*1000000+'&prb='+Math.random()*1000000;
